@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+* {
+    margin: 0%;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+:root {
+    /*light text color = ltc*/
+    --ltc: #efefee;
+    /*dark text color = dtc*/
+    --dtc: #333333;
+    /*effect text color = etc*/
+    --etc: #e7db70;
+    /*light background color = lbg*/
+    --lbg: #efefee;
+    /*dark background color = dbg*/
+    --dbg: #333333;
+    /*icon color = ic*/
+    --ic: #004bf0;
+    /*shadow*/
+    --shadow: 0 0 15px 1px rgba(0,0,0,0.8);
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--dbg);
+    color: var(--ltc);
+}
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+h2 {
+    background-color: var(--lbg);
+    color: var(--dtc);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+}
+
+
+/*------------------------------------*/
+
+/*<!-- Menu -->*/
+menu {
+    position: fixed;
+    background-color: black;
+    z-index: 3;
+    top: 0;
+    width: 100%;
+}
+
+menu ul {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: flex-start;
+}
+menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--ltc);
+    padding: 0.3rem;
+}
+
+menu ul li {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 0.5rem;
+    list-style: none;
+}
+
+menu i {
+    padding-right: 0.3rem;
+}
+
+menu ul li:hover,
+menu i:hover,
+menu a:hover {
+    color: var(--etc);
+    /*font-size: 1.3rem;*/
+}
+
+/*------------------------------*/
+/*<!-- header -->*/
+
+.header::after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://source.unsplash.com/WLUHO9A_xik/1600x900");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.header:hover::after {
+    filter: blur(0px);
+}
+.header:hover .content {
+    filter: blur(2px);
+}
+.header .content:hover {
+    cursor: pointer;
+    filter: blur(0px);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 50%;
+    margin: -150px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    transition: all 1000ms;
+}
+
+.content .logo {
+    height: 300px;
+    padding-top: 5rem;
+}
+.content .title {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+.content .quote {
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+.quote::before {
+    content: open-quote;
+    font-size: 2rem;
+}
+.quote::after {
+    content: close-quote;
+    font-size: 2rem;
+}
+.b:hover {
+    color: var(--etc);
+    font-size: 3rem;
+    transition: 100ms ease-in-out;
+}
+
+/*  <!------------------------------------> */
+/*  <!----------------services----------------------> */
+
+
+#services h2::before {
+    display: block;
+    height: 3px;
+    background: var(--dtc);
+    content: '';
+}
+#services h2::after {
+    display: block;
+    height: 3px;
+    background: var(--dtc);
+    content: '';
+}
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    text-align: center;
+    margin: auto;
+    padding-top: 2rem;
+}
+.service:hover {
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    background-color: black;
+    transition: ease-in-out 500ms;
+    color: var(--etc);
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#services h3,
+#services i,
+#services p {
+    padding: 0.5rem;
+}
+
+/* <!------------------------------------> */
+
+/* <!------------------portfolio------------------> */
+
+
+#portfolio h2::before {
+    display: block;
+    height: 3px;
+    background: var(--dtc);
+    content: '';
+}
+#portfolio h2::after {
+    display: block;
+    height: 3px;
+    background: var(--dtc);
+    content: '';
+}
+.portfolio-content img {
+    width: 450px;
+    border: 10px var(--ltc) solid;
+    box-shadow: var(--shadow);
+    margin: 0.5rem;
+}
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 2fr));
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 3rem;
+}
+
+/* <!------------------------------------> */
+
+/* <!--------------------about--------------------------> */
+
+#about h2::before {
+    display: block;
+    height: 3px;
+    background: var(--dtc);
+    content: '';
+}
+#about h2::after {
+    display: block;
+    height: 3px;
+    background: var(--dtc);
+    content: '';
+}
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    text-align: left;
+    margin: auto;
+
+}
+#about .fa-braille {
+    color: var(--ic);
+}
+
+#about a[attribute]{
+    position: relative;
+}
+#about a[attribute]::after{
+    content: attr(attribute);
+    display: block;
+    position: absolute;
+    background-color: var(--dbg);
+    color: var(--ltc);
+    padding: 0.5em;
+    border-radius: 5px;
+    bottom: 100%;
+    left: 0;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+#about a[attribute]:hover:after{
+    transform: scale(1);
+    transition: transform ease-out 150ms;
+}
+
+.right {
+    text-align: left;
+
+}
+.about a {
+    text-decoration: none;
+    color: var(--ic);
+    font-size: 1.5rem;
+}
+.about p {
+    letter-spacing: 1px;
+}
+
+#about h3,
+.fa-braille {
+    text-align: left;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+/* <!------------------------------------> */
+/* <!---------------------------contact------------------------> */
+
+#contact h2::before {
+    display: block;
+    height: 3px;
+    background: var(--dtc);
+    content: '';
+}
+#contact h2::after {
+    display: block;
+    height: 3px;
+    background: var(--dtc);
+    content: '';
+}
+#contact h3,
+.fa-id-card {
+    text-align: left;
+    padding: 1rem;
+    font-size: 2rem;
+}
+.info {
+    background-color: var(--lbg);
+    color: var(--dtc);
+    padding: 1rem;
+    margin: 15px;
+}
+#contact i {
+    color: var(--ic);
+    padding: 0.5rem;
+}
+
+/* <!------------------------------------> */
+/* <!-----------------------footer-----------------------> */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    padding: 0.5rem;
+}
+footer span {
+    color: var(--etc);
+}
+
